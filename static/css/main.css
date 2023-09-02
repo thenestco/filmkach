@@ -49,6 +49,7 @@ object {
 
 .column {
   float: left;
+  width: 33.33%;
 }
 
 .left {
