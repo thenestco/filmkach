@@ -365,7 +365,7 @@ w3.displayObject = function (id, data) {
         }
         if (value == undefined) {
           if (lookForARR[i].substr(0, 1) == '"') {
-            value = lookForARR[i].replace(/"/g, "");
+            value = lookForARR[i].replace(/"g, "");
           } else if (lookForARR[i].substr(0,1) == "'") {
             value = lookForARR[i].replace(/'/g, "");
           }
