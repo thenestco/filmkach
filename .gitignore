@@ -3,3 +3,7 @@
 *.icloud
 *.idea/*
 *.py
+
+node_modules
+extras
+dist
