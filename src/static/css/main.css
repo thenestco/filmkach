@@ -1,31 +1,5 @@
 @import url("https://nest.garmentsans.com/static/css/main.css");
 
-header ul {
-  list-style-type: none;
-  margin: 0px;
-  padding: 0px;
-  overflow: hidden;
-  background-color: #333;
-  border-radius: 5px;
-  height: 47px;
-}
-
-header li {
-  float: left;
-}
-
-header li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-header li a:hover {
-  background-color: #111;
-}
-
 .grid-item {
   float: left;
   width: 50%;

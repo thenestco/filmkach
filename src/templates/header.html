@@ -1,5 +1,19 @@
 <header>
-  <h1><a href="index.html">F. Käch | Photography</a></h1>
+  <div class="dropdown" id="dropdown">
+    <button onclick="toggleDropdown()" class="dropbtn">
+      <h1>&#9660; <a href="index.html">F. Käch | Photography</a></h1>
+    </button>
+    <div class="dropdown-content">
+      <h1><a href="https://nest.garmentsans.com">the nest</a></h1>
+      <h1><a href="https://garmentsans.com">garment sans</a></h1>
+    </div>
+  </div>
+  <script>
+    function toggleDropdown() {
+      document.getElementById("dropdown").classList.toggle("show");
+    }
+  </script>
+
   <ul>
     <li><a href="about.html">about</a></li>
     <li><a href="rates.html">rates</a></li>
