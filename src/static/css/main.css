@@ -5,6 +5,11 @@
   width: 50%;
 }
 
+.grid-item img {
+  width: 300px;
+  height: 300px;
+}
+
 .column {
   float: left;
   width: 33.33%;
