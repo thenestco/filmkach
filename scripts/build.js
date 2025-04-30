@@ -8,6 +8,8 @@ import imageminPngquant from "imagemin-pngquant";
 import imageminSvgo from "imagemin-svgo";
 import { promisify } from "util";
 
+const siteName = "fi.lm.k&auml;ch";
+
 const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 const mkdir = promisify(fs.mkdir);
@@ -60,7 +62,7 @@ async function buildPage(file) {
   let finalHTML = baseTemplate
     .replace(
       "{{PAGE_TITLE}}",
-      pageName === "index" ? "fi.lm.k&auml;ch" : `fi.lm.k&auml;ch - ${pageName}`
+      pageName === "index" ? siteName : `${siteName} - ${pageName}`
     )
     .replace('<div id="header-container"></div>', header)
     .replace('<div id="content-container"></div>', pageContent)
@@ -129,7 +131,6 @@ async function build() {
     for (const file of contentFiles) {
       await buildPage(file);
     }
-    // await buildPage("index");
 
     await compileSass();
     await optimizeImages();
