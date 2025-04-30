@@ -32,8 +32,6 @@ header {
   margin-right: 10px;
   padding: 0;
   position: fixed;
-//   overflow: hidden;
-//   overflow-y: auto;
   z-index: 1000;
 
   h1 a,
@@ -69,42 +67,103 @@ header {
       text-decoration: none;
     }
   }
-}
 
-.dropbtn {
-  float: right;
-  background-color: $background-color;
-  border: none;
-  cursor: pointer;
+  // Mobile styles for the header
+  @media (max-width: 768px) {
+    position: relative; /* Remove fixed positioning */
+    width: 100%; /* Make the header span the full width */
+    height: auto; /* Adjust height to fit content */
+    float: none; /* Remove float */
+    margin: 0; /* Remove margin */
+    padding: 10px 20px; /* Add padding for spacing */
+    z-index: 1000;
+
+    h1,
+    h2 {
+      text-align: center; /* Center-align header text */
+    }
+
+    nav {
+      display: none; /* Initially hide the navigation menu */
+      flex-direction: column; /* Stack menu items vertically */
+      background-color: $background-color;
+      position: absolute;
+      top: 100%; /* Position below the header */
+      left: 0;
+      width: 100%;
+      padding: 10px 0;
+
+      a {
+        text-align: center; /* Center-align menu items */
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+      }
+    }
+
+    &.open nav {
+      display: flex; /* Show the navigation menu when open */
+    }
+  }
 }
 
 .dropdown {
-  position: relative;
-  margin-right: 1em;
+  .dropdown-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  &-content {
-    display: none;
-    position: absolute;
-    background-color: rgb(182, 199, 183);
-    border-radius: 5px;
-    top: 100%;
-    right: 0;
-    z-index: 1;
+    .dropbtn {
+      margin-right: 10px; // Add spacing between the button and the text
+      font-size: 18px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
 
-    a {
+    .site-title {
+      font-size: 18px;
       text-decoration: none;
-      display: block;
+      color: black;
     }
   }
 
-  &.show .dropdown-content {
-    display: block;
+  .site-nav {
+    display: flex;
+    gap: 15px;
+    display: none; // Hide the dropdown menu by default
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  &.open nav {
+    // .site-nav {
+    display: flex; // Show the dropdown menu when the `open` class is added
+  }
+}
+
+.hamburger {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block; /* Show the hamburger icon */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
   }
 }
 
 main {
   margin-left: $header-width; // Use the same variable for margin-left
   flex: 1;
+  @media (max-width: 768px) {
+    margin-left: 0; // Reset margin for mobile view
+  }
 }
 
 h3,
@@ -133,7 +192,7 @@ object {
 footer {
   clear: both;
   padding-top: 25px;
-  bottom:0;
+  bottom: 0;
 }
 
 .grid-item {
